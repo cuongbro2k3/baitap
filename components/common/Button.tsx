@@ -4,13 +4,15 @@ import React from 'react'
 type Props = {
     onPress?: () => void
     title?: string
+    styleButton?: object
+    styleText?: object
 }
 
-const Button = ({onPress, title}: Props) => {
+const Button = ({onPress, title, styleButton, styleText}: Props) => {
   return (
     <View style={styles.container}>
-        <TouchableOpacity style={styles.btn} onPress={onPress}>
-            <Text>{title}</Text>
+        <TouchableOpacity style={[styles.btn, styleButton]} onPress={onPress}>
+            <Text style={[styleText]}>{title}</Text>
         </TouchableOpacity>
     </View>
   )
